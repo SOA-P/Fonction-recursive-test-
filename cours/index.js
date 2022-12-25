@@ -219,5 +219,32 @@ let array4 = ["Ruby", "solidity" ,"React"];
 
 
 // FILTER (filtrer )  SORT( trier )  ET MAP ( Lister un nouveau tableau) 
+//  console.log(arrayNumber.filter((number) => number > 10));
+// console.log(arrayNumber.sort()); " tri par ordre de lettre ou chiffre " 
+// console.log(arrayNumber.sort((a, b) => a - b)); " tri dans l'ordre de a à b"
+// console.log(arrayNumber.sort((a, b) => b - a)); " tri dans l'ordre b - a" 
 
-console.log(arrayNumber.filter((number) => number >10));
+
+// MAP
+// arrayNumber.map((number) => (document.body.innerHTML += `<li>${number}</li>`));
+// document.body.innerHTML = arrayNumber
+//     .map((number) => `<li>${number}</li>`)
+//     .join("");
+
+
+
+// METHOD Object TOUJOURS UTILISER LE " . " AFIN DE SE BALADER A TRAVERS UN OBJET
+ 
+document.body.innerHTML = data
+    .filter((user) => user.admin === false)
+    .filter((user) => user.name.includes("i"))
+    .sort((a, b) => b.age- a.age)
+    .map((user) =>
+    `
+     <div class="user">
+    <h2>${user.name}</h2>
+    <p>${user.age} ans</p>
+    <p>Profil: ${user.techno}</p>
+    <p> status: ${user.admin ? "Modérateur": "Membre"}</p>
+    </div>
+    `).join("");
